@@ -1,0 +1,67 @@
+body {
+	background: green;
+}
+.card {
+	position: relative;
+	width: 125px;
+	height: 175px;
+	background-color: rgb(226, 225, 225);
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.4);
+	border-radius: 10px;
+	text-align: center;
+}
+h1 {
+	position: absolute;
+	font-size: 450%;
+	margin-left: 35px;
+	color: rgb(1, 44, 1);
+}
+.drawCard {
+	position: relative;
+	top: -6px;
+	right: 10px;
+}
+.slot {
+	width: 125px;
+	height: 175px;
+	display: inline-block;
+	margin: 10px;
+}
+
+.greenColor {
+	background: rgb(1, 73, 1);
+	border: 2px;
+	border-style: solid;
+  	border-color: rgb(1, 44, 1);
+}
+.cardPile {
+	position: absolute;
+}
+.containerslots {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1080px;
+}
+.container {
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 1060px;
+}
+.columnCardClosed {
+	position: absolute;
+	z-index: 2;
+	margin-top: 300px;
+	top: var(--main-color);
+}
+li {
+	list-style: none;
+}
+img {
+	box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+}
+img:hover {
+	outline-style: solid;
+	outline-color: red;
+}
