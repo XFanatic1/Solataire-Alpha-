@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="CardTableStyles.css"/>
+    <script type="text/javascript" src="Solitare.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div class="card" onclick="">
+        <img src="card back red.png" width="187.5" alt="">
+    </div> -->
+    <div>
+
+    </div>
+    <div class="container">
+        <div id="cardDraw" class="slot drawCard" onmousedown="sound()" onclick="drawCard()">
+            <img src="800px-Card_back_05a.svg.png" width="125" alt="">
+        </div>
+        <div class="slot cardPile">
+            <img src="" alt="" width="125" id="cardPile">
+        </div>
+        <div class="slot">
+
+        </div>
+        <div id="aceSlot1" class="slot greenColor">
+            <h1>♣</h1>
+        </div>
+        <div id="aceSlot2" class="slot greenColor">
+            <h1>♦</h1>
+        </div>
+        <div id="aceSlot3" class="slot greenColor">
+            <h1>♥</h1>
+        </div>
+        <div id="aceSlot4" class="slot greenColor">
+            <h1>♠</h1>
+        </div>
+    </div>
+    <div class="containerslots">
+        <div id="slot1" class="slot greenColor">
+          
+            <img src="800px-Card_back_05a.svg.png" style="--main-color: -20px;" class="columnCardClosed" width="125" alt="">
+
+        </div>
+        <div id="slot2" class="slot greenColor">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: -20px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 10px;" class="columnCardClosed" width="125" alt="">
+        </div>
+        <div id="slot3" class="slot greenColor">
+           
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: -20px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 10px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 40px;" class="columnCardClosed" width="125" alt="">
+       
+        </div>
+        <div id="slot4" class="slot greenColor">
+         
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: -20px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 10px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 40px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 70px;" class="columnCardClosed" width="125" alt="">
+                
+        </div>
+        <div id="slot5" class="slot greenColor">
+          
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: -20px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 10px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 40px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 70px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 100px;" class="columnCardClosed" width="125" alt="">
+         
+        </div>
+        <div id="slot6" class="slot greenColor">
+        
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: -20px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 10px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 40px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 70px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 100px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 130px;" class="columnCardClosed" width="125" alt="">
+      
+        </div>
+        <div id="slot7" class="slot greenColor">
+         
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: -20px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 10px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 40px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 70px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 100px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 130px;" class="columnCardClosed" width="125" alt="">
+                <img src="800px-Card_back_05a.svg.png" style="--main-color: 160px;" class="columnCardClosed" width="125" alt="">
+        
+        </div>
+    </div>
+    <button id="btn">UnSelect</button>
+    <img id="dummy" width="125" class="columnCardClosed"></img>
+</body>
+</html>
