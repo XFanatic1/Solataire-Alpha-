@@ -24,9 +24,9 @@ let aceColumn3 = []
 let aceColumn4 = []
 const aceSuits = ['C','D','H','S']
 let aceStacks = [aceColumn1,aceColumn2,aceColumn3,aceColumn4]
-var selectedCard
+var selectedCard //start
 var theColor
-var preSlot
+let preSlot
 var theStack = []
 var preTheCard
 var dummy = false
@@ -83,7 +83,7 @@ function appendClone(card, slot, ace=false) {
   }
 }
 function selectCard(theCard, placedOnAble = false, slot = '',ace,empty=false) {
-  console.log('slot',slot,'preslot',preSlot,'thecard',theCard)
+  console.log(theCard)
   if (empty) {
     if ((selectedCard[0] === 'k') && (theCard !== selectedCard)) {
       console.log(preSlot,slot)
@@ -152,8 +152,11 @@ function selectCard(theCard, placedOnAble = false, slot = '',ace,empty=false) {
                 document.getElementById('slot' + preSlot).children[cardsColumns[preSlot-1].length-1].src = cardsColumns[preSlot-1][cardsColumns[preSlot-1].length-1] + '.png'
                 document.getElementById('slot' + x).children[cardsColumns[preSlot-1].length-1].onclick = function() {selectCard(o,true, x)}
               }
-              if (document.getElementById('slot' + y).lastElementChild !== undefined) {
-                document.getElementById('slot' + y).lastElementChild.onclick = function() {selectCard(c,true, y)}
+
+              if (!cardsColumns[preSlot-1][0]) {
+                let z = preSlot
+                console.log('found empty slot!')
+                document.getElementById('slot' + z).onclick = function() {selectCard(false,false,z,false,true)}
               }
             }
           } else {
@@ -161,15 +164,6 @@ function selectCard(theCard, placedOnAble = false, slot = '',ace,empty=false) {
             aceStacks[slot-1].push(selectedCard)
             appendClone(selectedCard,slot,true)
             document.getElementById('cardPile').src = ''
-          }
-          if (!cardsColumns[preSlot-1][0]) {
-            let z = preSlot
-            document.getElementById('slot' + preSlot).onclick = function() {selectCard(false,false,'e' + z)}
-          }
-          if (!cardsColumns[preSlot-1][0]) {
-            let z = preSlot
-            console.log('found empty slot!')
-            document.getElementById('slot' + preSlot).onclick = function() {selectCard(false,false,z,false,true)}
           }
           console.log(cardsColumns)
           selectedCard = ''
@@ -245,7 +239,7 @@ function selectCard(theCard, placedOnAble = false, slot = '',ace,empty=false) {
       }
     }
   }
-  unSelect()
+  
 }
 function unSelect () {
   selectedCard = ''
@@ -256,18 +250,23 @@ function sound() {
   audio2.play()
 }
 function drawCard() {
+  console.log(ShuffledDeck)
   unSelect ()
-  if (!cardIndex) {
+  if (ShuffledDeck[cardIndex] === -1) {
     shuffleing.play()
   }
-  if (cardIndex !== ShuffledDeck.length-1) {
-    
-    document.getElementById('cardPile').onclick = function() {selectCard(ShuffledDeck[cardIndex])}
-    cardIndex++
-    document.getElementById('cardPile').src = ShuffledDeck[cardIndex] + '.png'
-  } else {
-    cardIndex = 0
+  cardIndex++
+  console.log(ShuffledDeck[cardIndex])
+  console.log(cardIndex)
+  if (!ShuffledDeck[cardIndex]) {
     document.getElementById('cardPile').src = ''
+  } else {
+    document.getElementById('cardPile').onclick = function() {selectCard(ShuffledDeck[cardIndex])}
+    document.getElementById('cardPile').src = ShuffledDeck[cardIndex] + '.png'
+  }
+  if (cardIndex >= ShuffledDeck.length) {
+    console.log('set to zero')
+    cardIndex = -1
   }
 }
 
