@@ -6,7 +6,7 @@ const shuffleing = new Audio('shuffling-cards-1.wav')
 
 backgroundMusic.play()
 
-var cardIndex = 0
+let cardIndex = 0
 let deck = ['aS','aD','aC','aH','kS','kD','kC','kH','qS','qD','qC','qH','jS','jD','jC','jH','0S','0D','0C','0H','9S','9D','9C','9H'
 ,'8S','8D','8C','8H','7S','7D','7C','7H','6S','6D','6C','6H','5S','5D','5C','5H','4S','4D','4C','4H','3S','3D','3C','3H','2S','2D','2C','2H'];
 const hierechy = ['k','q','j','0','9','8','7','6','5','4','3','2','a']
@@ -26,12 +26,12 @@ let aceColumn3 = []
 let aceColumn4 = []
 const aceSuits = ['C','D','H','S']
 let aceStacks = [aceColumn1,aceColumn2,aceColumn3,aceColumn4]
-var selectedCard //start
-var theColor
+let selectedCard //start
+let theColor
 let preSlot
 var theStack = []
-var preTheCard
-var dummy = false
+let preTheCard
+let dummy = false
 document.getElementById('aceSlot1').onclick = function() {selectCard(false,false,1,true)}
 document.getElementById('aceSlot2').onclick = function() {selectCard(false,false,2,true)}
 document.getElementById('aceSlot3').onclick = function() {selectCard(false,false,3,true)}
@@ -120,9 +120,6 @@ function selectCard(theCard, placedOnAble = false, slot = '',ace,empty=false) {
               document.getElementById('slot' + preSlot).children[i-1].src = cardsColumns[preSlot-1][i-1] + '.png'
               document.getElementById('slot' + x).children[i-1].onclick = function() {selectCard(o,true, x)}
             }
-            // if (document.getElementById('slot' + y).lastElementChild !== undefined) {
-            //   document.getElementById('slot' + y).lastElementChild.onclick = function() {selectCard(c,true, y)}
-            // }
           }
         }
         for (let i = 0; i < theStack.length; i++) {
